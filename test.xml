@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <!-- 设置mysql驱动路径  这里项目中已经配置的有了，就不再单独引入-->
+    <!--<classPathEntry location="mysql-connector-java-5.1.9.jar" />-->
+
+    <!-- 此处指定生成针对MyBatis3的DAO -->
+    <context id="context1" targetRuntime="MyBatis3">
+
+        <!-- 指定生成文件的编码 -->
+        <property name="javaFileEncoding" value="UTF-8"/>
+
+        <!-- 阻止系统原生英文注释生成 -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <!-- jdbc连接信息 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/hydq"
+                        userId="root" password="123456"/>
+        <!-- 生成vo对象 -->
+        <javaModelGenerator targetPackage="com.hydq.oa.entity" targetProject="src"/>
+        <!-- 生成用于查询的mapper.xml 配置文件 -->
+        <sqlMapGenerator targetPackage="mybatis" targetProject="src"/>
+        <!-- 生成DAO的类文件以及配置文件 mapper.java  -->
+        <javaClientGenerator targetPackage="com.hydq.oa.dao" targetProject="src" type="XMLMAPPER"/>
+        <!-- 想要生成的数据库表,自动化工具会根据该表的结构生成相应的vo对象 -->
+
+       <!-- <table tableName="tb_hydq_bill" domainObjectName="Bill" enableSelectByExample="false"
+               enableDeleteByExample="false" enableCountByExample="false" enableUpdateByExample="false">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+
+        <table tableName="tb_hydq_cost_type" domainObjectName="CostType" enableSelectByExample="false"
+               enableDeleteByExample="false" enableCountByExample="false" enableUpdateByExample="false">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+
+        <table tableName="tb_hydq_customer" domainObjectName="Customer" enableSelectByExample="false"
+               enableDeleteByExample="false" enableCountByExample="false" enableUpdateByExample="false">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+            <columnOverride column="gender" jdbcType="TINYINT" javaType="java.lang.Integer"/>
+        </table>
+
+        <table tableName="tb_hydq_device" domainObjectName="Device" enableSelectByExample="false"
+               enableDeleteByExample="false" enableCountByExample="false" enableUpdateByExample="false">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+
+        <table tableName="tb_hydq_office_supply" domainObjectName="OfficeSupply" enableSelectByExample="false"
+               enableDeleteByExample="false" enableCountByExample="false" enableUpdateByExample="false">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="tb_hydq_receipt" domainObjectName="Receipt" enableSelectByExample="false"
+               enableDeleteByExample="false" enableCountByExample="false" enableUpdateByExample="false">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="tb_hydq_received_payments" domainObjectName="ReceivedPayments" enableSelectByExample="false"
+               enableDeleteByExample="false" enableCountByExample="false" enableUpdateByExample="false">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+            <columnOverride column="received_mode" jdbcType="TINYINT" javaType="java.lang.Integer"/>
+        </table>
+        <table tableName="tb_hydq_repair" domainObjectName="Repair" enableSelectByExample="false"
+               enableDeleteByExample="false" enableCountByExample="false" enableUpdateByExample="false">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+            <columnOverride column="emergency" jdbcType="TINYINT" javaType="java.lang.Integer"/>
+            <columnOverride column="type" jdbcType="TINYINT" javaType="java.lang.Integer"/>
+            <columnOverride column="is_received_payments" jdbcType="TINYINT" javaType="java.lang.Integer"/>
+            <columnOverride column="is_invoice" jdbcType="TINYINT" javaType="java.lang.Integer"/>
+            <columnOverride column="status" jdbcType="TINYINT" javaType="java.lang.Integer"/>
+        </table>
+
+        <table tableName="tb_hydq_resource" domainObjectName="Resource" enableSelectByExample="false"
+               enableDeleteByExample="false" enableCountByExample="false" enableUpdateByExample="false">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+            <columnOverride column="level" jdbcType="TINYINT" javaType="java.lang.Integer"/>
+            <columnOverride column="status" jdbcType="TINYINT" javaType="java.lang.Integer"/>
+        </table>
+
+        <table tableName="tb_hydq_role" domainObjectName="Role" enableSelectByExample="false"
+               enableDeleteByExample="false" enableCountByExample="false" enableUpdateByExample="false">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+            <columnOverride column="status" jdbcType="TINYINT" javaType="java.lang.Integer"/>
+        </table>
+        <table tableName="tb_hydq_role_resource" domainObjectName="RoleResource" enableSelectByExample="false"
+               enableDeleteByExample="false" enableCountByExample="false" enableUpdateByExample="false">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+
+
+        <table tableName="tb_hydq_user" domainObjectName="User" enableSelectByExample="false"
+               enableDeleteByExample="false" enableCountByExample="false" enableUpdateByExample="false">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+            <columnOverride column="status" jdbcType="TINYINT" javaType="java.lang.Integer"/>
+        </table>
+
+        <table tableName="tb_hydq_wage" domainObjectName="Wage" enableSelectByExample="false"
+               enableDeleteByExample="false" enableCountByExample="false" enableUpdateByExample="false">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+
+        <table tableName="tb_hydy_equipment" domainObjectName="Equipment" enableSelectByExample="false"
+               enableDeleteByExample="false" enableCountByExample="false" enableUpdateByExample="false">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+-->
+        <table tableName="tb_hydq_permission_role" domainObjectName="PermissionRole" enableSelectByExample="false"
+               enableDeleteByExample="false" enableCountByExample="false" enableUpdateByExample="false">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+
+    </context>
+</generatorConfiguration>
